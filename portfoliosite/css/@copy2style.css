@@ -1,0 +1,182 @@
+/*remove list dots*/
+ul{
+	margin: 0;
+ 	padding: 0;
+	list-style: none;
+}
+
+/*grid for structure*/
+body {
+	margin: 0;
+	display:grid;
+	grid-template-columns: 15% auto;
+	grid-template-rows: 1fr 50px;
+	grid-template-areas: "nav cont"
+						 "footer footer";
+}
+
+/*grid area*/
+aside{
+	grid-area: nav;
+}
+
+int-main{
+	grid-area: cont;
+}
+
+footer{
+	grid-area: footer;
+}
+
+gallery{
+	grid-area: cont;
+}
+
+/*list container - intro*/
+int-main .list{
+	padding-top: 100px;
+	padding-left: 50px;
+	padding-right: 50px;
+	background-color: rgba(186, 198, 237, 0.5);
+	display: flex;
+	flex-direction: row-reverse;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+}
+
+aside .list{
+	/*background-color: #B4DAEB;*/
+	color: #000000;
+	/*text-shadow: 2px 2px 4px #000000;*/
+	padding-top: 45px;
+	padding-bottom: 45px;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	justify-content: flex-start;
+
+}
+
+footer .list{
+	background-color: lightblue;
+	display: flex;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+}
+
+/*list container - gallery*/
+gallery .list{
+/*	background-color: lightpink;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: repeat(2, 1fr);*/
+}
+
+/*list container - contact*/
+contact .list{
+	background-color: #BAC6ED;
+	display:flex;
+	height: 100%;
+	flex-wrap: wrap;
+	/*flex-direction: column;*/
+	justify-content: center;
+}
+
+
+/*content definition*/
+aside .item{
+	padding: 10px 15px;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 1.3em;
+	min-width: 200px;
+	font-family: 'Marmelad', sans-serif;
+}
+
+int-main .item{
+	font-size: 1.3em;
+	padding: 20px;
+	font-family: 'Ubuntu', sans-serif;
+	line-height: 1.5;
+}
+
+gallery .item{
+	padding: 2em;
+	border-radius: .3em;
+	box-shadow: 10px 10px 30px rgba(0,0,0,0.1);
+	margin-top: 0;
+}
+
+contact .item{
+	font-size: 1.4em;
+	border-style: dotted;
+	margin: 25px;
+	text-align: center;
+}
+
+
+/*id definition*/
+
+
+#idlogo{
+	/*margin-bottom: 50px;*/
+}
+
+#idlogo img{
+	width: 100%;
+	visibility: hidden;
+	/*min-width: 200px;*/
+}
+
+#dumbhead{
+	margin: 20px;
+	display: flex;
+	border-style: dotted;
+	width: 100%;
+	height: 200px;
+	text-align: center; 
+	align-items: center;
+	/*why the width didnt show in exact size?*/
+}
+
+#idcontact{
+	margin-top: 100px;
+	width: 100%;
+	height: 100px;
+	line-height: 100px;
+	/*text-align: center;*/
+	vertical-align: middle;
+}
+
+#idinfo{
+	/*margin-top: 50px;*/
+	width: 100%;
+	height: 100px;
+	line-height: 100px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+#idemail{
+	/*margin: 30px;*/
+	width: 40%;
+	min-width: 300px;
+}
+
+#idtwitter{
+	width: 40%;
+	min-width: 300px;
+}
+
+#iddiscord{
+	width:40%;
+	min-width: 300px;
+}
+
+#idphone{
+	width: 40%;
+	min-width: 300px;
+}
+
