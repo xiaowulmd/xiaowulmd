@@ -1,45 +1,60 @@
-/*remove list dots*/
+/*--remove list dots--*/
 ul{
 	margin: 0;
  	padding: 0;
 	list-style: none;
 }
+/*--end--*/
+
 
 /*grid for structure*/
 body {
 	margin: 0;
 	padding: 3em;
 	display: grid;
-	grid-gap:2em;
-	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	grid-gap: 2em;
+	/*grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));*/
+	grid-template-columns: 300px 1fr;
 }
 
-/*list container - intro*/
-int-main .list{
-	padding-top: 100px;
-	padding-left: 50px;
-	padding-right: 50px;
-	background-color: rgba(186, 198, 237, 0.5);
-	display: flex;
-	flex-direction: row-reverse;
-	height: 100%;
-	justify-content: center;
-	align-items: center;
-}
+/*--end--*/
 
+
+/*--list container--*/
+	/*--navigator,common--*/
 aside .list{
 	/*background-color: #B4DAEB;*/
 	color: #000000;
-	/*text-shadow: 2px 2px 4px #000000;*/
 	padding-top: 45px;
 	padding-bottom: 45px;
 	display: flex;
 	flex-direction: column;
 	height: 100%;
+	width: 100%;
 	justify-content: flex-start;
-
 }
 
+	/*--intro--*/
+int-main .list{
+	padding-top: 100px;
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-bottom: 100px;
+	background-color: rgba(186, 198, 237, 0.5);
+	display: flex;
+	flex-direction: row-reverse;
+	height: 100%;
+}
+
+	/*--gallery--*/
+gallery .list{
+	display: grid;
+	grid-gap: 1em;
+	grid-template-columns: repeat(2, minmax(350px, 1fr));
+}
+
+
+	/*--footer, common--*/
 footer .list{
 	background-color: lightblue;
 	display: flex;
@@ -48,24 +63,35 @@ footer .list{
 	align-items: center;
 }
 
-/*list container - gallery*/
-.list{
-}
-
-/*list container - contact*/
+	/*--contact--*/
 contact .list{
-	background-color: #BAC6ED;
+	/*background-color: rgba(186, 198, 237, 0.5);*/
 	display:flex;
 	height: 100%;
 	flex-wrap: wrap;
-	/*flex-direction: column;*/
 	justify-content: center;
 }
+/*--end--*/
 
+/*--link style--*/
+
+aside a{
+	color: black;
+	text-decoration: none;
+	padding: 10px 20px;
+	display: inline-block;
+}
+
+aside a:hover{
+	background-color: #B3EED5;
+	color: white;
+	transition-delay: .1s;
+	transition-duration: .5s;
+}
 
 /*content definition*/
 aside .item{
-	padding: 10px 15px;
+	padding: 5px 15px;
 	text-transform: uppercase;
 	text-align: center;
 	font-size: 1.3em;
@@ -85,27 +111,35 @@ gallery .item{
 	border-radius: .3em;
 	box-shadow: 10px 10px 30px rgba(0,0,0,0.1);
 	margin-top: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Ubuntu', sans-serif;
+	line-height: 1.5;
 }
 
 contact .item{
+	font-family: 'Ubuntu', sans-serif;
 	font-size: 1.4em;
-	border-style: dotted;
-	margin: 25px;
 	text-align: center;
+	margin: 25px;
+	border-radius: .3em;
+	box-shadow: 10px 10px 30px rgba(0,0,0,0.1);
 }
 
+gallery .item img, gallery .item iframe{
+	width: 100%;
+	max-width: 400px;	
+}
+
+/*--end--*/
 
 /*id definition*/
 
-
-#idlogo{
-	/*margin-bottom: 50px;*/
-}
-
 #idlogo img{
-	width: 100%;
-	visibility: hidden;
-	/*min-width: 200px;*/
+	width: 70%;
+	max-width: 300px;
+	margin-bottom: 30px;
 }
 
 #dumbhead{
@@ -113,34 +147,32 @@ contact .item{
 	display: flex;
 	border-style: dotted;
 	width: 100%;
+	max-width: 300px;
 	height: 200px;
 	text-align: center; 
 	align-items: center;
-	/*why the width didnt show in exact size?*/
 }
 
 #idcontact{
-	margin-top: 100px;
+	margin-top: 50px;
 	width: 100%;
 	height: 100px;
-	line-height: 100px;
-	/*text-align: center;*/
+	line-height: 50px;
 	vertical-align: middle;
-}
-
-#idinfo{
-	/*margin-top: 50px;*/
-	width: 100%;
-	height: 100px;
-	line-height: 100px;
-	text-align: center;
-	vertical-align: middle;
+	border-radius: .3em;
+	box-shadow: 0px 0px;
 }
 
 #idemail{
-	/*margin: 30px;*/
 	width: 40%;
 	min-width: 300px;
+}
+
+#idemail:hover, #idtwitter:hover, #iddiscord:hover {
+	background-color: #BAC6ED;
+	color: white;
+	transition-delay: .1s;
+	transition-duration: .5s;
 }
 
 #idtwitter{
@@ -153,11 +185,32 @@ contact .item{
 	min-width: 300px;
 }
 
-#idphone{
-	width: 40%;
-	min-width: 300px;
+@media (max-width: 1125px){
+	body {
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(); 
+	}
+
+	aside .list{
+		/*background-color: green;*/
+	}
 }
 
-@media (min-width: 550px){
+	/*--breaking point--*/
+@media (max-width: 800px) {
+	int-main .list{
+		padding-top: 20px;
+		padding-bottom: 30px;
+		flex-direction: column;
+		align-items: center;
+		font-size: .8em;
 
+	}
+	#gpara{
+		display: none;
+	}
+
+	gallery .list{
+		display: flex;
+		flex-direction: column;
 }
