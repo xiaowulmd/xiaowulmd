@@ -170,12 +170,26 @@ gallery .item img, gallery .item iframe{
 	min-width: 300px;
 }
 
-#idemail:hover, #idtwitter:hover, #iddiscord:hover {
-	background-color: #BAC6ED;
+#idemail:hover{
+	background-color: #D93025;
 	color: white;
 	transition-delay: .1s;
 	transition-duration: .5s;
 }
+
+ #idtwitter:hover{
+ 	background-color: #1A91DA;
+	color: white;
+	transition-delay: .1s;
+	transition-duration: .5s;
+ }
+
+ #iddiscord:hover{
+ 	background-color: #7289DA;
+	color: white;
+	transition-delay: .1s;
+	transition-duration: .5s;
+ }
 
 #idtwitter{
 	width: 40%;
